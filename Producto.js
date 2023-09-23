@@ -1,3 +1,7 @@
+const Cliente  = require("./Cliente.js");
+//const clientes = require("./defClientes.js");
+//const productos = require("./defProductos.js");
+
 class Producto {
     #nombreProducto;        // puede haber muchos procuctos
     #precioProducto;        // valor numérico
@@ -9,36 +13,36 @@ class Producto {
         this.#nombreProducto = nombre;        // puede haber muchos procuctos
         this.#precioProducto = precio;        // valor numérico
         this.#cantidadStock = cantidad;       // valor numérico
-        this.#stockMinimo   = stockMin;       // valor numérico
-        this.#vendidoA = [];                  // a uno o mas clientes
+        this.#stockMinimo   = stockMin;       // valor 
+        this.#vendidoA      = [] ;            // a uno o mas clientes
     }
     
-    setNombreProducto (nombre) {
-        this.#nombreProducto = nombre;   // se podría hacer una para poner en cero
+    setNombreProducto (nombr) {
+        this.#nombreProducto = nombr;   // se podría hacer una para poner en cero
     }
 
     getNombreProducto() {
         return (this.#nombreProducto);
     }
 
-    setPrecioProducto (precio) {
-        this.#precioProducto = precio;   // se podría hacer una para poner en cero
+    setPrecioProducto (prec) {
+        this.#precioProducto = prec;   // se podría hacer una para poner en cero
     }
 
     getPrecioProducto() {
         return (this.#precioProducto);
     }
 
-    setCantidadStock (cantidad) {
-        this.#cantidadStock = cantidad ;   // stock
+    setCantidadStock (cant) {
+        this.#cantidadStock = cant ;   // stock
     }
 
     getCantidadStock() {
         return (this.#cantidadStock);          // devuelve stock
     }
 
-    setStockMinimo(cantidad) {
-        this.#stockMinimo = cantidad ;   // stock
+    setStockMinimo(cant) {
+        this.#stockMinimo = cant ;   // stock
     }
     
     getStockMinimo() {
@@ -46,8 +50,9 @@ class Producto {
     }
     
 
-    setVendidoA (nombre, cant) {
-        this.#vendidoA.push(nombre, cant) ;   // pueden ser varios
+    setVendidoA (nomb, cant) {
+        let compra = [nomb, cant];
+        this.#vendidoA.push(compra) ;   // pueden ser varios
     }
 
     getVendidoA() {
@@ -56,26 +61,27 @@ class Producto {
 
     /// Procedimientos
     cualEstuNombre () {
-        console.log("Soy el producto: "+this.getNombreProducto());
+        console.log("Producto: "+this.getNombreProducto());
     }
 
-    venderACliente (cliente, cantidad) {
-        console.log("Soy: " + this.#nombreProducto + " le vendo: " + cantidad + 
-                    " unidad a: "+cliente.getNombreCliente() );
-        this.#vendidoA.push (cliente.getNombreCliente(), cantidad); 
-        this.#cantidadStock -= cantidad;
+    venderACliente (clien, cant) {
+        console.log("Producto: " + this.#nombreProducto + " vende: " + cant + 
+                    " unidad/es a cliente: "+clien.getNombreCliente() );
+        clien.comprarProducto (this, cant);
+        this.setVendidoA((clien.getNombreCliente()), cant); 
+        this.#cantidadStock -= cant;
         if (this.#cantidadStock <= this.#stockMinimo) {
             console.log("Alerta Stock Mínimo!! Producto: "+this.#nombreProducto+" cant. "+this.#cantidadStock);
         }
     }
        
-    cuantoQuedaDeStock () {
-        console.log("Producto: "+this.#nombreProducto+" quedan: "+this.#cantidadStock+" unidades");
+    cuantoStockTienes () {
+        console.log("Producto: "+this.#nombreProducto+" quedan: "+this.#cantidadStock+" unidad/es");
     }
 
     reporteDeVentas() {
-        console.log("Reporte de Ventas Producto: "+this.#nombreProducto+" Vendido a: "+this.#vendidoA);
-        //console.table("Reporte de Ventas Producto: "+this.#nombreProducto+" Vendido a: "+this.#vendidoA);
+        console.log("Reporte de Ventas Producto: "+this.#nombreProducto+" Vendido a: ");
+        console.table(this.#vendidoA);
     }
    
 }

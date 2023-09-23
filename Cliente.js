@@ -1,4 +1,7 @@
 const Producto  = require("./Producto.js");
+//const clientes = require("./defClientes.js");
+//const productos = require("./defProductos.js");
+
 
 class Cliente {
     #nombreCliente;    // nombre completo 
@@ -28,21 +31,18 @@ class Cliente {
 // Procedimientos
 
     cualEstuNombre () {
-        console.log("Mi nombre es: "+this.getNombreCliente());
+        console.log("El Nombre de cliente es: "+this.getNombreCliente());
     }
 
-    comprarProducto (producto, cantidad) {
-        console.log("Soy: " + this.#nombreCliente + " estoy comprando: " + cantidad + " de: "+producto.getNombreProducto() );
-        this.#montoComprado += producto.getPrecioProducto(); 
+    comprarProducto (prod, cant) {
+        console.log("Cliente: " + this.#nombreCliente + " está comprando: " + cant + " unidad/es de: "+prod.getNombreProducto() );
+        this.#montoComprado += prod.getPrecioProducto(); 
     }
        
-    cuantoGastaste () {
-        console.log("Soy: " + this.#nombreCliente+", llevo gastado: "+this.#montoComprado);
+    montoGastado () {
+        console.log("Cliente: " + this.#nombreCliente+", lleva gastado: "+this.#montoComprado);
     }
     
-
-
-
 }
 
 module.exports = Cliente;

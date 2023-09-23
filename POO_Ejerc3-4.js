@@ -2,23 +2,28 @@
 // Importo las clases
 const Cliente = require("./Cliente.js");
 const Producto = require("./Producto.js");
-//const clientes = require("./defClientes.js");
-//const productos = require("./defProductos.js");
-/// defino los objetos y los inicializo con el "constructor"
+/// defino los objetos en un vector y los inicializo con el "constructor"
 // productos
-//const producto1 = new Producto("YerbaMatex1Kg", 1750, 10, 3);
-//const producto2 = new Producto("Azucarx1Kg", 900, 5, 2);
-//const productos = [producto1, producto2];
 const productos = [ producto1 = new Producto("YerbaMatex1Kg", 1750, 10, 3),
                     producto2 = new Producto("Azucarx1Kg", 900, 5, 2) ];
 // clientes
-//const cliente1  = new Cliente("Juan", 0);
-//const cliente2  = new Cliente("Pedro", 0);
-//const clientes = [cliente1, cliente2];
 const clientes = [ cliente1 = new Cliente("Juan", 0),
                    cliente2 = new Cliente("Pedro", 0) ];
 
-////
+//// Funciones locales
+/**
+ * Consulta estado de Productos y Clientes
+ */
+function estadoProductosClientes() {
+    clientes[0].montoGastado();
+    clientes[1].montoGastado();
+    // Estado de Stock 
+    productos[0].cuantoStockTienes();
+    productos[1].cuantoStockTienes();
+    // Reporte de Ventas
+    productos[0].reporteDeVentas();
+    productos[1].reporteDeVentas();
+}
 /// Presentación de Productos y Clientes...
 //
 console.log("DÍA '0' PRESENTACIÓN DE PRODUCTOS Y CLIENTES");
@@ -53,16 +58,7 @@ productos[1].venderACliente(clientes[0], 1);
 productos[1].venderACliente(clientes[1], 1);
 //
 console.log("Cierre del día 1");
-// Estado de cuenta de clientes
-clientes[0].montoGastado();
-clientes[1].montoGastado();
-// Estado de Stock 
-productos[0].cuantoStockTienes();
-productos[1].cuantoStockTienes();
-// Reporte de Ventas
-productos[0].reporteDeVentas();
-productos[1].reporteDeVentas();
-
+estadoProductosClientes();
 /////////////////////////////////
 // Dia 2
 console.log("DÍA '2' Ventas del Día");
@@ -70,15 +66,7 @@ productos[0].venderACliente(clientes[0], 2);
 productos[0].venderACliente(clientes[1], 3);
 /////
 console.log("Cierre del día 2");
-// Estado de cuenta de clientes
-clientes[0].montoGastado();
-clientes[1].montoGastado();
-// Estado de Stock 
-productos[0].cuantoStockTienes();
-productos[1].cuantoStockTienes();
-// Reporte de Ventas
-productos[0].reporteDeVentas();
-productos[1].reporteDeVentas();
+estadoProductosClientes();
 /////////////
 // Dia 3
 console.log("DÍA '3' Ventas del Día");
@@ -86,15 +74,8 @@ productos[1].venderACliente(clientes[0], 2);
 productos[0].venderACliente(clientes[1], 2);
 /////
 console.log("Cierre del día 3");
-// Estado de cuenta de clientes
-clientes[0].montoGastado();
-clientes[1].montoGastado();
-// Estado de Stock 
-productos[0].cuantoStockTienes();
-productos[1].cuantoStockTienes();
-// Reporte de Ventas
-productos[0].reporteDeVentas();
-productos[1].reporteDeVentas();
+estadoProductosClientes();
+
 /////////////
 /* Fin */
 

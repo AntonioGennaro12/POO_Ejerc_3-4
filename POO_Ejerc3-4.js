@@ -1,15 +1,8 @@
 // POO Ejercicio 3-4
-// Importo las clases
-const Cliente = require("./Cliente.js");
-const Producto = require("./Producto.js");
-/// defino los objetos en un vector y los inicializo con el "constructor"
-// productos
-const productos = [ producto1 = new Producto("YerbaMatex1Kg", 1750, 10, 3),
-                    producto2 = new Producto("Azucarx1Kg", 900, 5, 2) ];
-// clientes
-const clientes = [ cliente1 = new Cliente("Juan", 0),
-                   cliente2 = new Cliente("Pedro", 0) ];
-
+// Importo las definiciones de clases
+const clientes = require("./defClientes.js");
+const productos = require("./defProductos.js");
+//
 //// Funciones locales
 /**
  * Consulta estado de Productos y Clientes

@@ -27,7 +27,7 @@ reporteClientes();
 // 
 // Ahora cargamos los datos de las ventas del día
 // /al mismo tiempo se actualizan los stocks y datos de cliente
-console.log("DÍA '1' Ventas del Día");
+// console.log("DÍA '1' Ventas del Día");
 //productos[0].venderACliente(clientes[0], 1);
 //productos[1].venderACliente(clientes[0], 1);
 //productos[1].venderACliente(clientes[1], 1);
@@ -56,7 +56,7 @@ console.log("DÍA '1' Ventas del Día");
 //productos[0].venderACliente(clientes[1], 2);
 //console.log("Estado al cierre del día 3");
 //ventasDeDia[2].getVentaDia();
-
+//
 console.log("DÍA '1' Ventas del Día");
 cargaVentasDia(0);
 console.log("DÍA '2' Ventas del Día");

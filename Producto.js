@@ -1,7 +1,5 @@
 const Cliente  = require("./Cliente.js");
-//const clientes = require("./defClientes.js");
-//const productos = require("./defProductos.js");
-
+//
 class Producto {
     #nombreProducto;        // puede haber muchos procuctos
     #precioProducto;        // valor numérico

@@ -1,5 +1,5 @@
-const clientes = require("./defClientes");
-const productos = require("./defProductos");
+const clientes = require("./defClientes.js");
+const productos = require("./defProductos.js");
 
 function reporteClientes() {
     for(let i=0; i  <clientes.length; i++)

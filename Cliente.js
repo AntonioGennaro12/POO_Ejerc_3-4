@@ -1,8 +1,5 @@
 const Producto  = require("./Producto.js");
-//const clientes = require("./defClientes.js");
-//const productos = require("./defProductos.js");
-
-
+//
 class Cliente {
     #nombreCliente;    // nombre completo 
     #montoComprado;    //acumulado por cliente  

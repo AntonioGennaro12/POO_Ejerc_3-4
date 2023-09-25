@@ -49,7 +49,9 @@ class Producto {
     
 
     setVendidoA (nomb, cant) {
-        let compra = [nomb, cant];
+        let compra = [];
+        compra.Cliente = nomb;
+        compra.Cantidad = cant;
         this.#vendidoA.push(compra) ;   // pueden ser varios
     }
 

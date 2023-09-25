@@ -2,8 +2,8 @@ const clientes = require("./defClientes.js");
 const productos = require("./defProductos.js");
 //
 class VentasDelDia {
-    #diaOpera          // Dia de operación Comercial (1, 2, 3...etc) 
-    #ventaDia;            // producto[x], cantidad[y] a cliente[z] array tridimensional
+    #diaOpera;          // Dia de operación Comercial (1, 2, 3...etc) 
+    #ventaDia;         // producto[x], cantidad[y] a cliente[z] array tridimensional
 
     constructor (dia, venta) {
         this.#diaOpera     = dia;   // puede haber muchos procuctos

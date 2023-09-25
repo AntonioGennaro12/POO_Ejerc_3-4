@@ -26,17 +26,6 @@ for (let i=0; i< ventasDia.length; i++) {
     estadoProductosClientes();
 }
 
-//
-//console.log("DÍA '2' Ventas del Día");
-//cargaVentasDia(1);
-//console.log("DÍA '3' Ventas del Día");
-//cargaVentasDia(2);
-//console.log("DÍA '4' Ventas del Día");
-//cargaVentasDia(3);
-//console.log("DÍA '5' Ventas del Día");
-//cargaVentasDia(4);
-//estadoProductosClientes();
-//
 /* Fin */
 
 

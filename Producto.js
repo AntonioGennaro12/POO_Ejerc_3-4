@@ -76,7 +76,7 @@ class Producto {
     }
        
     cuantoStockTienes () {
-        console.log("Producto: "+this.#nombreProducto+" quedan: "+this.#cantidadStock+" unidad/es");
+        console.log("Producto: "+this.#nombreProducto+" en stock: "+this.#cantidadStock+" unidad/es");
     }
 
     reporteDeVentas() {

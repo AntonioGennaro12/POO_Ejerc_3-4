@@ -1,12 +1,13 @@
-const Producto  = require("./Producto.js");
+//const Producto  = require("./Producto.js");
 //
-class Cliente {
+class NuestrosClientes {
     #nombreCliente;    // nombre completo 
-    #montoComprado;    //acumulado por cliente  
-
+    #montoComprado;    //acumulado por cliente 
+     
     constructor(nombre, comprado) {
         this.#nombreCliente = nombre;
         this.#montoComprado = comprado;
+        
     }
 
     setNombreCliente (nombre) {
@@ -32,16 +33,23 @@ class Cliente {
     }
 
     comprarProducto (prod, cant) {
+        let desc = this.getDescuento();
+        console.log("DescCompraProd: "+desc);
         console.log("Cliente: " + this.#nombreCliente + " está comprando: " + cant + " unidad/es de: "+prod.getNombreProducto() );
-        this.#montoComprado += prod.getPrecioProducto(); 
+        this.#montoComprado += ((prod.getPrecioProducto())*cant)*(1-desc); 
     }
        
     montoGastado () {
-        console.log("Cliente: " + this.#nombreCliente+", lleva gastado: "+this.#montoComprado);
+        console.log("Cliente: " + this.#nombreCliente+", Cumpleaños: "+ this.getFechaCumpleanios() + ", lleva gastado: "+this.#montoComprado);
     }
     
+    getDescuento () {   // El Descuento es de la subclase Clientes Comerciales
+        return (0);
+    }
+
+    getFechaCumpleanios() { // El Cuemplanios es de la subclase CLientes Residenciales
+        return ("no/aplica");
+    }
 }
 
-module.exports = Cliente;
-
-
+module.exports = NuestrosClientes;
